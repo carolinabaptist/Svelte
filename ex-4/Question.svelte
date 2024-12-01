@@ -28,7 +28,7 @@ function shuffle(array) {
 
 {#each allAnswers as answer}
 
-    <button> 
+    <button on:click = {() -> checkQuestion(answer.correct)}> 
          {@html answer.answer}
          {answer.correct}
     </button>
