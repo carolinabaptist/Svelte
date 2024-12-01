@@ -1,7 +1,7 @@
 <!-- from https://levelup.video/tutorials/svelte-for-beginners/our-questions -->
 
 <script>
-
+import Question from "./Question.svelte";
 let quiz = getQuiz();
 
 
@@ -22,10 +22,10 @@ function handleClick(){
   {#await quiz}
     Loading...
   {:then data}
-  <h3>{data.results[0].question}</h3>
-  {#each data.results as question}
-    <Question question={question}/>
-  {/each}
+  
+    {#each data.results as question}
+      <Question {question}/>
+    {/each}
   {/await}
 </div>
   
