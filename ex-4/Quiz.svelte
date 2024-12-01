@@ -24,9 +24,8 @@ function handleClick(){
   {:then data}
   <h3>{data.results[0].question}</h3>
   {#each data.results as question}
-    <button on:click={() -> pickAnswer(answer)}> 
-      Answer {answer.toUpperCase()} 
-    </button>
+    <Question question={question}/>
   {/each}
   {/await}
+</div>
   
