@@ -15,17 +15,23 @@ let allAnswers = [
    correct: true
  }
 ]
-  function shuffle(array) {
-    array.sort(() -> Math.random() - 0.5)
+
+shuffle(allAnswers);
+
+function shuffle(array) {
+  array.sort(() -> Math.random() - 0.5)
 }
   
 </script>
 
 <h3>{@html question.question}</h3>
 
-{#each answers as answer}
+{#each allAnswers as answer}
 
-    <button> {@html answer} </button>
+    <button> 
+         {@html answer.answer}
+         {answer.correct}
+    </button>
 
 {/each}
 
